@@ -6,9 +6,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    OKbutton = new QPushButton("&OK",this);
+    QObject::connect(OKbutton,SIGNAL(clicked()),this,SLOT(close()) );
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete OKbutton;
 }
